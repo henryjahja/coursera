@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+  <head>
+    <style>
+        .buckets {
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+        }
+        #rightSide {
+            border-left: 3px solid black;
+        }
+        img{
+            position: absolute;
+        }
+      </style>
+    <script>
+        var smileyFaces = 50;
+        function getRand(min, max) {
+            return Math.floor((Math.random()*(max-min)))+min;
+        }
+        function generateFaces() {
+            var randPosX, randPosY;
+            var theBody = document.getElementsByTagName("body")[0];
+            var theLeft = document.getElementById("leftSide");
+            //var theRight = document.getElementsById("rightSide");
+            var theImg = document.createElement("img");
+            theImg.src = "http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png";
+            theImg.onclick = function gameOver() {
+                alert("Game Over!");
+                theBody.onclick = null;
+                theLeftSide.lastChild.onclick = null;
+            };
+            for (var i = 0 ; i < smileyFaces ; i++){
+                randPosX = getRand(0,400);
+                randPosY = getRand(0,400);
+                theImg.style.top = randPosX+'px';
+                theImg.style.left = randPosY+'px';
+                theLeft.appendChild(theImg.cloneNode(true));
+            }
+        }
+    </script>
+  </head>
+  <body onload="generateFaces()">
+    <div class="buckets" id="leftSide"></div>
+    <div class="buckets" id="rightSide"></div>
+
+    </body>
+</html>

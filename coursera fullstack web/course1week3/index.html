@@ -1,0 +1,68 @@
+<!--<!doctype html>
+<html>
+  <head>
+    <script>
+      function do_something() {
+        var theBody = document.getElementsByTagName("body")[0];
+        var theImg = document.createElement("img");
+        theImg.src = "cat.png";
+        theBody.appendChild(theImg.cloneNode(true));
+        var count = 0;
+        for (var i = 0; i < 10; i++, count++) {
+            if (i == 5) continue;
+            if (count == 3) {
+                count = 0;
+                theBody.removeChild(theBody.lastChild);
+            } else {
+                theBody.appendChild(theImg.cloneNode(true));
+            }
+            if (i > 7) break;
+        }
+      }
+    </script>
+  </head>
+  <body onload="do_something()"></body>
+</html>-->
+
+<!doctype html>
+<html>
+  <head>
+    <style>
+        .buckets {
+            display: inline-block;
+            width: 350px;
+            height: 350px;
+            background-color: aqua;
+            border: 2px solid green;
+        }
+        img{
+            position: absolute;
+        }
+      </style>
+    <script>
+        var numberof = 5;
+        function getRand(min, max) {
+            return Math.floor((Math.random()*(max-min)))+min;
+        }
+        function generateFaces()
+        function do_something() {
+            var randPosX, randPosY;
+            var theLeft = document.getElementsById("leftSide");
+            var theRight = document.getElementsById("rightSide");
+            var theImg = document.createElement("img");
+            theImg.src = "smiley.png";
+            for (var i = 0 ; i < smileyFaces ; i++){
+                randPosX = getRand(20,300);
+                randPosY = getRand(20,300);
+                
+                
+            }
+        }
+    </script>
+  </head>
+  <body onload="do_something()">
+    <div class="buckets" id="leftSide"></div>
+    <div class="buckets" id="rightSide"></div>
+
+    </body>
+</html>
